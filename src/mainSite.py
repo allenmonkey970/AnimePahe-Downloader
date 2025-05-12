@@ -90,12 +90,12 @@ def main():
     # Open browser once
     options = uc.ChromeOptions()
     driver = uc.Chrome(options=options)
+    filtered = []
     for ep in episodes:
         driver.get(f"https://animepahe.ru/play/{anime_session}/{ep['session']}")
         time.sleep(8)
         html = driver.page_source
         download_links = extract_download_links(html)
-        filtered = []
         for label, _ in download_links:
             llabel = label.lower()
             if (mode == 'sub' and 'subsplease' in llabel) or (mode == 'dub' and 'yameii' in llabel):
