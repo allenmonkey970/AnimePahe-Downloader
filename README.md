@@ -1,17 +1,16 @@
-# animepahe-downloader
+# AnimePahe Downloader
 
-A Python script for automating the process of searching, extracting download links, and downloading anime episodes from [AnimePahe](https://animepahe.ru/).  
-This repo combines searching, link extraction, and batch video file downloads into a simple CLI workflow.
+AnimePahe Downloader is a Python script that helps you search for anime, extract direct download links, and batch-download episodes from [AnimePahe](https://animepahe.ru/)—all from a simple command-line interface.
 
-## Features
+## What It Does
 
-- **Anime Search**: Search for anime titles
-- **Episode Listing**: Fetch and display episode lists with metadata.
-- **Download Link Extraction**: Extract direct download links (subs/dubs, quality selection) for episodes.
-- **Batch Download Automation**: Download multiple episodes automatically using Selenium (undetected-chromedriver).
-- **User-Friendly CLI**: Menu-driven interface for all actions.
+- **Anime Search:** Find anime titles and view available episodes.
+- **Episode Listings:** See episode lists along with useful metadata.
+- **Download Link Extraction:** Get direct download links (choose subs/dubs and video quality).
+- **Batch Downloads:** Download multiple episodes in one go, using Selenium and `undetected-chromedriver` to get around anti-bot measures.
+- **Easy CLI:** A menu-driven interface guides you through every step.
 
-## Usage
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -22,25 +21,25 @@ cd animepahe-downloader
 
 ### 2. Install dependencies
 
-It's recommended to use a virtual environment.
+It's best to use a virtual environment.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**Required dependencies:**
+Main dependencies:
 - `requests`
 - `beautifulsoup4`
 - `undetected-chromedriver`
 - `selenium`
 
-### 3. Run the CLI
+### 3. Run the script
 
 ```bash
 python main.py
 ```
 
-You'll be presented with a menu:
+You'll see a menu like this:
 
 ```
 ==== AnimePahe Downloader Main ====
@@ -52,33 +51,33 @@ You'll be presented with a menu:
 
 #### Option 1: Generate download links
 
-- Search for your desired anime.
-- Select subbed/dubbed and quality (720p/1080p).
-- Generate a `.txt` file with download links for all or specific episodes.
+- Search for an anime title.
+- Pick subbed/dubbed and video quality (720p/1080p).
+- Save download links for selected episodes into a `.txt` file.
 
 #### Option 2: Download from links file
 
-- Provide the `.txt` file generated in step 1.
-- The script will open a browser, follow redirect links, and auto-download the videos.
+- Choose the `.txt` file you created earlier.
+- The script opens a browser, follows the links, and automatically downloads the videos.
 
-## Folder Structure
+## Project Structure
 
 ```
 animepahe-downloader/
-├── main.py           # The CLI entry point
-├── mainSite.py       # Anime search & link generator
-├── downloadSite.py   # Automated downloader script
+├── main.py           # CLI entry point
+├── mainSite.py       # Handles anime search and link generation
+├── downloadSite.py   # Handles automated downloads
 ├── README.md
 ├── requirements.txt
-├── downloads/        # (auto-created) Downloaded video files
+├── downloads/        # (auto-created) Where downloaded video files go
 └── ...
 ```
 
-## Notes & Tips
+## Tips & Notes
 
-- **Browser Automation**: Uses `undetected-chromedriver` to avoid anti-bot detection.
-- **Download Directory**: All videos are saved to the `downloads/` folder by default.
-- **AnimePahe Limits**: Excessive requests may result in temporary blocks; proceed responsibly.
+- **Automation:** Uses `undetected-chromedriver` to reduce the chance of being blocked.
+- **Download Location:** All videos are saved to the `downloads/` folder.
+- **AnimePahe Limits:** Too many requests can get your IP temporarily blocked. Download responsibly.
 
 ## License
 
@@ -87,5 +86,4 @@ animepahe-downloader/
 ---
 
 **Disclaimer:**  
-This tool is intended for educational use only. Please do NOT copy or distribute downloaded anime episodes to any third party from [AnimePahe](https://animepahe.ru/) and
-Do not use this tool to violate the Terms of Service of any website.
+This tool is for educational use only. Don't redistribute, download anime, or use this script to break the Terms of Service of AnimePahe or any other site.
